@@ -36,3 +36,62 @@
     transform: rotate(360deg);
   }
 }
+
+.title {
+  font-size: 40px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.restoreHideTickets {
+  background-color: transparent;
+  color: blue;
+  border-style: none;
+}
+
+.restoreHideTickets:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.header {
+  text-align: center;
+}
+
+#hideTicketsCounter {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.ticket {
+  border-style: solid;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+}
+
+.hideTicketButton {
+  background-color: transparent;
+  color: blue;
+  border-style: none;
+  padding-right: 10px;
+}
+
+.hideTicketButton:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.label {
+  padding: 1px;
+  margin-left: 5px;
+  /* border-style: solid; */
+  background-color: grey;
+  color: white;
+  border-radius: 10%;
+  /* border-radius: 1px; */
+}
