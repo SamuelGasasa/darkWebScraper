@@ -89,8 +89,8 @@ async function main() {
       data[index].content = text;
     });
   // data = [{ title: [...titles], content: [...contents] }];
-  console.log(data);
-  console.log(data.length, details.length, contents.length);
+  // console.log(data);
+  // console.log(data.length, details.length, contents.length);
   // data.push({
   //   titles: [...titles],
   //   details: [...details],

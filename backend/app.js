@@ -1,17 +1,33 @@
 const express = require("express");
 const scraper = require("./scraper");
 const mongoose = require("mongoose");
-const Paste = require("./models/Paste");
+const Paste = require("./models/paste");
 
 const app = express();
 // const { titles, details, contents } =
 // scraper().then(({ titles }) => console.log(titles));
 
-// mongoose.connect()
-
+mongoose.connect(
+  "mongodb+srv://fullstack:785412@cluster0.xuzon.mongodb.net/firstTry-samuel?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("DB Connected!!!");
+  },
+);
 app.get("/data", async (req, res) => {
   const data = await scraper();
-  console.log(data);
+  data.forEach((val) => {
+    const paste = new Paste({
+      author: val.author,
+      content: val.content,
+      title: val.title,
+      date: val.date,
+    });
+    paste.save().then((doc) => {
+      console.log(doc);
+    });
+  });
+
   //   const regAuthor = /(?<=\bby\s)(\w+)/gm;
   //   const regDate = /(?<=\bat\s)(.*)(?=UTC)/gm;
   //   const author = [];
