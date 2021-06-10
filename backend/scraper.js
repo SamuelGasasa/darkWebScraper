@@ -115,7 +115,8 @@ async function main() {
   const date = [];
   data.forEach((val) => {
     [val.author] = val.detail.match(regAuthor);
-    val.date = val.detail.match(regDate) + " UTC";
+    const dateFormat = val.detail.match(regDate) + "UTC";
+    val.date = new Date(dateFormat).toUTCString();
   });
   // return { titles, details, contents };
 

@@ -15,13 +15,15 @@ function App() {
     setData(data);
     console.log(data);
   }
+  // useEffect(() => {
+  //   setInterval(() => {
+  // getData();
+  //   }, 10000);
+  // }, []);
+  // getData();
   useEffect(() => {
     getData();
   }, []);
-  // getData();
-  // useEffect(() => {
-  //   getData();
-  // }, []);
   // const { titles, details, contents } = getData();
   return (
     <div>

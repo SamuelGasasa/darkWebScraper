@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const scraper = require("./scraper");
 const mongoose = require("mongoose");
@@ -8,7 +9,7 @@ const app = express();
 // scraper().then(({ titles }) => console.log(titles));
 
 mongoose.connect(
-  "mongodb+srv://fullstack:785412@cluster0.xuzon.mongodb.net/firstTry-samuel?retryWrites=true&w=majority",
+  process.env.MONGO_URI,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("DB Connected!!!");
