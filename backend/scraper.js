@@ -109,7 +109,14 @@ async function main() {
   // console.log(post.find("ol").text());
 
   browser.close();
-
+  const regAuthor = /(?<=\bby\s)(\w+)/gm;
+  const regDate = /(?<=\bat\s)(.*)(?=UTC)/gm;
+  const author = [];
+  const date = [];
+  data.forEach((val) => {
+    [val.author] = val.detail.match(regAuthor);
+    val.date = val.detail.match(regDate) + " UTC";
+  });
   // return { titles, details, contents };
 
   /**
